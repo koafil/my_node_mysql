@@ -1,4 +1,4 @@
-//const routes = require('./routes/routes');
+const routes = require('./routes/routes');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -17,12 +17,12 @@ app.use((req,res,next)=>{
   next();
 });
 
-// app.get('/',(req,res)=>{
-//   console.log(`URL: ${req.url}`);
-//   res.send({message: 'Node.js and Express REST API'});
-// });
+//  app.get('/',(req,res)=>{
+//    console.log(`URL: ${req.url}`);
+//    res.send({message: 'Node.js and Express REST API'});
+//  });
 
-//routes(app);
+routes(app);
 
 const server = app.listen(port, (err)=>{
   if(err) return console.log(`Error: ${err}`);
