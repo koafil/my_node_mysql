@@ -8,6 +8,13 @@ const router = app => {
     });
   });
 
+  app.get('/brands',(req,res)=>{
+    pool.query('SELECT * FROM brands', (error02,result02) => {
+      if (error02) throw error02;
+      console.log(`\\brands numRows = ${result02.length} `);
+      res.send({total:result02.length, rowData: result02});
+    });
+  });
   app.get('/articul',(req,res)=>{
     let numRows;
     pool.query('SELECT count(articul) as numRows FROM tovars', (error01,result01) => {
